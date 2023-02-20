@@ -1,86 +1,128 @@
 import { LitElement, html, css } from 'lit';
+import '@lrnwebcomponents/meme-maker';
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
+const fuecocoPic = new URL('https://www.serebii.net/Shiny/SV/new/909.png', import.meta.url).href;
 
-class CharacterCard2 extends LitElement {
-  static properties = {
-    header: { type: String },
+export class CharacterCard2 extends LitElement {
+  static get properties() {
+    return {
+      characterName: {
+        type: String, 
+        reflect: true
+      }, 
+      fuecocoDetails: {
+        type: String,
+      },
+
+      topText: {
+        type: String, 
+        reflect: true
+      },
+
+      bottomText: {
+        type: String,
+        reflect: true
+      },
+
+      subtitle: {
+        type: String, 
+        reflect: true, 
+      },
+
+      img: {
+        type: String, 
+        reflect: true, 
+      }
+
+    }
   }
 
-  static styles = css`
-    :host {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      font-size: calc(10px + 2vmin);
-      color: #1a2b42;
-      max-width: 960px;
-      margin: 0 auto;
-      text-align: center;
-      background-color: var(--character-card2-background-color);
+  static get styles() {
+    return css`
+      body {
+  background: cyan; 
+}
+.all{
+  border-style: dotted;
+  border-color: #89CFF0;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  border-width: 10px;
+  width: 400px;
+  max-width: 500px;
+  margin: auto;
+  background-color: pink;
+  margin-top: 10px;
+}
+.text { 
+  font-size: 16px;
+  color: black;
+}
+.title{
+  font-size: 40px;
+}
+.buttons{
+  text-align: center; 
+  padding: 5px;
+}
+.detailButton {
+  margin: 1px;
+  position: center; 
+}
+button:hover,
+buttons:focus{
+  background-color: pink;
+}
+.picture {
+  border-radius: 15px;
+  border: #89CFF0;
+  width: 400px;
+  align-items: center;
+}
+meme-maker {
+  border-radius: 10px;
+  border: solid white;
+  width: 400px;
+}
+@media (min-width: 500px) and (max-width: 800px) {
+    
+    .detailButton {
+      display: none;
     }
+  }
+@media (max-width: 500px) {
+  .all{
+    transform: scale(0.8);
+  }
+}
+    `;
+  }
 
-    main {
-      flex-grow: 1;
-    }
-
-    .logo {
-      margin-top: 36px;
-      animation: app-logo-spin infinite 20s linear;
-    }
-
-    @keyframes app-logo-spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .app-footer {
-      font-size: calc(12px + 0.5vmin);
-      align-items: center;
-    }
-
-    .app-footer a {
-      margin-left: 5px;
-    }
-  `;
-
-  constructor() {
+  constructor() { 
     super();
-    this.header = 'My app';
+    this.characterName = "Shiny Fuecoco";
+    this.characterDetails = "Shiny fuecoco is pink. what a slay. fuecoco loves fire and eating and chomping. he has no thought behind his eyes. not one. fuecoco best boy!!!"
+    //this.topText = "HEAD EMPTY"
+    //this.bottomText = "CHOMPCHOMPCHOMP"
+    //this.subtitle = "cutie croc"
+    this.img = "https://www.serebii.net/Shiny/SV/new/909.png"
   }
 
   render() {
     return html`
-      <main>
-        <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
-        <h1>${this.header}</h1>
-
-        <p>Edit <code>src/CharacterCard2.js</code> and save to reload.</p>
-        <a
-          class="app-link"
-          href="https://open-wc.org/guides/developing-components/code-examples/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Code examples
-        </a>
-      </main>
-
-      <p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>
+  <div class="all">
+  <h1 class="title">
+  ${this.characterName}
+</h1>
+  <slot name = "subtitle"></slot>
+  <img src = "https://www.serebii.net/Shiny/SV/new/909.png" width=300px>
+  
+  <p class ="text">
+    ${this.characterDetails}
+  </p>
+  <slot name = "img"></slot>
+</div>
     `;
   }
 }
