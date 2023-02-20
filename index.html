@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ededed;
+    }
+  </style>
+  <title>character-card2</title>
+</head>
+
+<body>
+  <div class="buttons">
+    <button class="copy" >Copy</button>
+  
+    <button class="toggleBackGroundColor" >Change Background Color</button>
+  
+    <button class="changeTitle">Change Title</button>
+  
+    <button class="deleteButton">Delete Last Instance</button>
+  
+    </div> 
+    
+    <button class="detailButton">      
+      Detail
+      </button>
+  
+<div id = "app">
+  <character-card2>
+    
+    <div slot="subtitle"> 
+      <h2>fuecoco slay</h2> 
+      </div>
+
+      <div slot="img">
+        <meme-maker image-url = "https://i.kym-cdn.com/photos/images/original/002/479/048/d21" top-text = "<3" bottom-text = "chomp"></meme-maker>
+      </div>
+
+
+</character-card2>
+</div>
+
+  <script type="module" src="./src/character-card2.js"></script>
+
+<script>
+
+document.querySelector('.copy').addEventListener("click", function(e){   
+  
+  const cloneCard = document.querySelector('character-card2').cloneNode();
+  document.querySelector('#app').appendChild(cloneCard); 
+  
+});
+
+document.querySelector(".deleteButton").addEventListener("click", function(e){ 
+  if (document.querySelector('#app :last-child') != document.querySelector('character-card2')) {
+  document.querySelector('#app :last-child').remove();
+} else {
+  alert('FUECOCO IS ETERNAL HEHEHEHEHE >:)');
+}
+  
+});
+
+// This handler will be executed only once when the cursor
+// moves over the unordered list
+document.querySelector('.detailButton').addEventListener("mouseenter", function (e) {
+  // highlight the mouseenter target
+
+  e.target.style.background= "pink";
+  detailButton.focus();
+});
+
+document.querySelector('.detailButton').addEventListener("mouseleave", function (e) {
+  // highlight the mouseenter target
+  e.target.style.background = "";
+  detailButton.blur()
+});
+
+document.querySelector('.detailButton').addEventListener("click", function(e){
+  const paragraph = document.querySelector('character-card2').shadowRoot.querySelector('.text'); 
+  if (paragraph.style.display === "none"){
+    paragraph.style.display = "block"
+  } else {
+    paragraph.style.display = "none";
+  }
+  
+});
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+document.querySelector(".toggleBackGroundColor").addEventListener("click", function(e){   
+  document.querySelector('character-card2').shadowRoot.querySelector('.all').style.backgroundColor = getRandomColor(); 
+});
+
+document.querySelector(".changeTitle").addEventListener("click", function(e){  
+  let characterName = prompt("Name the card.... (be nice)");
+  if (characterName) {
+    document.querySelector('character-card2').characterName = characterName;
+  }
+});
+
+</script>
+</body>
+
+</html>
