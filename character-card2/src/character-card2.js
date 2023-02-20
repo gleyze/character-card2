@@ -99,7 +99,7 @@ meme-maker {
     `;
   }
 
-  constructor() {
+  constructor() { 
     super();
     this.characterName = "Shiny Fuecoco";
     this.characterDetails = "Shiny fuecoco is pink. what a slay. fuecoco loves fire and eating and chomping. he has no thought behind his eyes. not one. fuecoco best boy!!!"
