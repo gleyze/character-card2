@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import '@lrnwebcomponents/meme-maker';
 
-const fuecocoPic = new URL('https://www.serebii.net/Shiny/SV/new/909.png', import.meta.url).href;
+const fuecocoPic = new URL('../assets/fuecocopicture.png', import.meta.url).href;
 
 export class CharacterCard2 extends LitElement {
   static get properties() {
