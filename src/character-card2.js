@@ -8,7 +8,6 @@ export class CharacterCard2 extends LitElement {
     return {
       characterName: {
         type: String, 
-        reflect: true
       }, 
       fuecocoDetails: {
         type: String,
@@ -16,24 +15,20 @@ export class CharacterCard2 extends LitElement {
 
       topText: {
         type: String, 
-        reflect: true
       },
 
       bottomText: {
         type: String,
-        reflect: true
       },
 
       subtitle: {
         type: String, 
-        reflect: true, 
       },
 
       img: {
-        type: String, 
-        reflect: true, 
-      }
-
+        type: String,  
+      },
+      
     }
   }
 
@@ -42,10 +37,11 @@ export class CharacterCard2 extends LitElement {
       body {
   background: cyan; 
 }
+
 .all{
   border-style: dotted;
   border-color: #89CFF0;
-  border-radius: 10px;
+  
   text-align: center;
   padding: 20px;
   border-width: 10px;
@@ -80,11 +76,8 @@ buttons:focus{
   width: 400px;
   align-items: center;
 }
-meme-maker {
-  border-radius: 10px;
-  border: solid white;
-  width: 400px;
-}
+
+
 @media (min-width: 500px) and (max-width: 800px) {
     
     .detailButton {
@@ -111,16 +104,21 @@ meme-maker {
 
   render() {
     return html`
-  <div class="all">
+  <div class="all" part= "all">
   <h1 class="title">
   ${this.characterName}
 </h1>
   <slot name = "subtitle"></slot>
   <img src = "https://www.serebii.net/Shiny/SV/new/909.png" width=300px>
   
+  <details>
+  <summary>Character Details</summary>
   <p class ="text">
     ${this.characterDetails}
   </p>
+</details>
+
+
   <slot name = "img"></slot>
 </div>
     `;
