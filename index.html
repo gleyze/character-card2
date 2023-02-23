@@ -41,7 +41,7 @@
       </button>
   
       
-<div id = "app">
+<!-- <div id = "app">
   <character-card2>
     
     <div slot="subtitle"> 
@@ -56,20 +56,64 @@
 </character-card2>
 </div>
 
+  <script type="module" src="./src/character-card2.js"></script> -->
+
+  <div id="app" class="container">
+    <character-card2>
+      <div slot="subtitle">
+        <h2>fuecoco slay</h2>
+      </div>
+      <div slot="img">
+        <meme-maker image-url="https://i.kym-cdn.com/photos/images/original/002/479/048/d21" top-text="<3" bottom-text="chomp"></meme-maker>
+      </div>
+    </character-card2>
+  </div>
+
   <script type="module" src="./src/character-card2.js"></script>
+
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    character-card2 {
+      flex: 0 0 auto;
+      margin: 10px;
+    }
+  </style>
+</body>
 
 <script>
 
 document.querySelector('.copy').addEventListener("click", function(e){   
-  
-  const cloneCard = document.querySelector('character-card2').cloneNode();
+  const cloneCard = document.querySelector('character-card2').cloneNode(true);
   document.querySelector('#app').appendChild(cloneCard); 
   
 });
 
+
+// const deleteButton = document.querySelector('.deleteButton');
+//     deleteButton.addEventListener('click', () => {
+//       const characterCard = document.querySelector('character-card2');
+//       characterCard.parentNode.removeChild(characterCard);
+
+
+// document.querySelector(".deleteButton").addEventListener("click", function(e){ 
+//   if (document.querySelector('#app :last-child') != document.querySelector('character-card2')) {
+//   document.querySelector('#app :last-child').remove();
+// } else {
+//   alert('FUECOCO IS ETERNAL HEHEHEHEHE >:)');
+// }
+  
+// });
+
+
 document.querySelector(".deleteButton").addEventListener("click", function(e){ 
   if (document.querySelector('#app :last-child') != document.querySelector('character-card2')) {
-  document.querySelector('#app :last-child').remove();
+    const characterCard = document.querySelector('character-card2');
+    characterCard.parentNode.removeChild(characterCard);
 } else {
   alert('FUECOCO IS ETERNAL HEHEHEHEHE >:)');
 }
@@ -77,9 +121,8 @@ document.querySelector(".deleteButton").addEventListener("click", function(e){
 });
 
 
+
 document.querySelector('.detailButton').addEventListener("mouseenter", function (e) {
-
-
   e.target.style.background= "pink";
   detailButton.focus();
 });

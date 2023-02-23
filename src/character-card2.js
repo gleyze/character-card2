@@ -96,19 +96,20 @@ buttons:focus{
     super();
     this.characterName = "Shiny Fuecoco";
     this.characterDetails = "Shiny fuecoco is pink. what a slay. fuecoco loves fire and eating and chomping. he has no thought behind his eyes. not one. fuecoco best boy!!!"
-    //this.topText = "HEAD EMPTY"
-    //this.bottomText = "CHOMPCHOMPCHOMP"
-    //this.subtitle = "cutie croc"
     this.img = "https://www.serebii.net/Shiny/SV/new/909.png"
+    this.subtitle="#fuecocoslay"
   }
 
   render() {
     return html`
-  <div class="all" part= "all">
+  <div class="all">
   <h1 class="title">
   ${this.characterName}
 </h1>
-  <slot name = "subtitle"></slot>
+<h2 class="subtitle">
+${this.subtitle}
+</h2>
+
   <img src = "https://www.serebii.net/Shiny/SV/new/909.png" width=300px>
   
   <details>
@@ -117,7 +118,6 @@ buttons:focus{
     ${this.characterDetails}
   </p>
 </details>
-
 
   <slot name = "img"></slot>
 </div>
