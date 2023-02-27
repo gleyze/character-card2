@@ -28,6 +28,10 @@ export class CharacterCard2 extends LitElement {
       img: {
         type: String,  
       },
+      opened: {
+        type: Boolean, 
+        reflect: true
+      }
       
     }
   }
@@ -100,6 +104,32 @@ buttons:focus{
     this.subtitle="#fuecocoslay"
   }
 
+
+  toggleEvent(e){
+    console.log(this.shadowRoot.querySelector('details').getAttribute('open'));
+    const state=this.shadowRoot.querySelector('details').getAttribute('open') === '' ? true : false;
+    
+    console.log(state);
+    this.opened=state;
+  }
+
+
+updated(changedProperties){
+  changedProperties.forEach((oldValue,propName) => {
+    if(propName==="opened"){
+      this.dispatchEvent(new CustomEvent('opened-changed',{
+        composed: true,
+        bubbles: true,
+        cancelable: true,
+        detail:{
+          value: this[propName]
+        }
+      }))
+      
+    }
+  });
+}
+
   render() {
     return html`
   <div class="all">
@@ -112,7 +142,7 @@ ${this.subtitle}
 
   <img src = "https://www.serebii.net/Shiny/SV/new/909.png" width=300px>
   
-  <details>
+  <details class="details" .open='${this.opened}' @toggle=${this.toggleEvent}>
   <summary>Character Details</summary>
   <p class ="text">
     ${this.characterDetails}
