@@ -34,7 +34,7 @@
   
     <button class="deleteButton">Delete Last Instance</button>
 
-    <button class="toggle">Details</button>
+    <button class="toggle">Show Details</button>
 
     </div>  
 
@@ -98,25 +98,16 @@ document.querySelector(".deleteButton").addEventListener("click", function(e){
 });
 
 //details button
-document.querySelector('.detailButton').addEventListener("mouseenter", function (e) {
-  e.target.style.background= "pink";
-  detailButton.focus();
-});
 
-document.querySelector('.detailButton').addEventListener("mouseleave", function (e) {
-  e.target.style.background = "";
-  detailButton.blur()
-});
-
-document.querySelector('.detailButton').addEventListener("click", function(e){
-  const paragraph = document.querySelector('character-card2').shadowRoot.querySelector('.text'); 
-  if (paragraph.style.display === "none"){
-    paragraph.style.display = "block"
-  } else {
-    paragraph.style.display = "none";
-  }
+// document.querySelector('.detailButton').addEventListener("click", function(e){
+//   const paragraph = document.querySelector('character-card2').shadowRoot.querySelector('.text'); 
+//   if (paragraph.style.display === "none"){
+//     paragraph.style.display = "block"
+//   } else {
+//     paragraph.style.display = "none";
+//   }
   
-});
+// });
 
 //change bg color
 function getRandomColor() {
@@ -136,7 +127,7 @@ document.querySelector(".toggleBackGroundColor").addEventListener("click", funct
 document.querySelector(".changeTitle").addEventListener("click", function(e){  
   let characterName = prompt("Name the card.... (be nice)");
   if (characterName) {
-    document.querySelector('character-card2').characterName = charaacterName;
+    document.querySelector('character-card2').characterName = characterName;
   }
 });
 
