@@ -132,7 +132,7 @@ updated(changedProperties){
 
   render() {
     return html`
-  <div class="all">
+  <div np="all">
   <h1 class="title">
   ${this.characterName}
 </h1>
