@@ -10,7 +10,7 @@ export class CharacterCard2 extends LitElement {
         type: String, 
         reflect: true
       }, 
-      fuecocoDetails: {
+      characterDetails: {
         type: String,
         reflect: true
       },
