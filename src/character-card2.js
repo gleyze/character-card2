@@ -8,25 +8,31 @@ export class CharacterCard2 extends LitElement {
     return {
       characterName: {
         type: String, 
+        reflect: true
       }, 
-      fuecocoDetails: {
+      characterDetails: {
         type: String,
+        reflect: true
       },
 
       topText: {
         type: String, 
+        reflect: true
       },
 
       bottomText: {
         type: String,
+        reflect: true
       },
 
       subtitle: {
         type: String, 
+        reflect: true
       },
 
       img: {
-        type: String,  
+        type: String, 
+        reflect: true 
       },
       opened: {
         type: Boolean, 
@@ -132,7 +138,7 @@ updated(changedProperties){
 
   render() {
     return html`
-  <div np="all">
+  <div class="all">
   <h1 class="title">
   ${this.characterName}
 </h1>
