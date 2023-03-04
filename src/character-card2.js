@@ -146,7 +146,7 @@ updated(changedProperties){
 ${this.subtitle}
 </h2>
 
-  <img src = "https://www.serebii.net/Shiny/SV/new/909.png" width=300px>
+  <img src="${this.img}">
   
   <details class="details" .open='${this.opened}' @toggle=${this.toggleEvent}>
   <summary>Character Details</summary>
