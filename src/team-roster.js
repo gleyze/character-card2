@@ -10,14 +10,14 @@ export class TeamRoster extends LitElement{
     static get properties() {
         return{
             players: {type: Array},
-            team: {type: String}
+            team: {type: String},
         }
     }
 
     constructor(){
         super();
         this.players = [];
-        this.team = "Natalies Pokemon Team";
+        this.team = "Natalie's Pokemon Team";
         this.updateRoster();
     }
 
@@ -33,8 +33,6 @@ export class TeamRoster extends LitElement{
         .then((data) => {
             this.players = data;
         });
-
-        console.log(data);
     }
 
     static get styles(){
