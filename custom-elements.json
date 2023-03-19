@@ -4,52 +4,258 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "src/scaffold-app.js",
+      "path": "api/roster.js",
       "declarations": [
         {
-          "kind": "class",
-          "description": "",
-          "name": "ScaffoldApp",
-          "members": [
+          "kind": "function",
+          "name": "handler",
+          "parameters": [
             {
-              "kind": "field",
-              "name": "header",
-              "type": {
-                "text": "string"
-              },
-              "default": "'My app'",
-              "privacy": "public",
-              "attribute": "header"
-            }
-          ],
-          "attributes": [
+              "name": "request"
+            },
             {
-              "name": "header",
-              "fieldName": "header"
+              "name": "res"
             }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "scaffold-app",
-          "customElement": true
+          ]
         }
       ],
       "exports": [
         {
-          "kind": "custom-element-definition",
-          "name": "scaffold-app",
+          "kind": "js",
+          "name": "default",
           "declaration": {
-            "name": "ScaffoldApp",
-            "module": "src/scaffold-app.js"
+            "name": "handler",
+            "module": "api/roster.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "stories/scaffold-app.stories.js",
+      "path": "src/character-card2.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CharacterCard2",
+          "members": [
+            {
+              "kind": "method",
+              "name": "toggleEvent",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "characterName",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Shiny Fuecoco\"",
+              "privacy": "public",
+              "attribute": "characterName",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "characterDetails",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Shiny fuecoco is pink. what a slay. fuecoco loves fire and eating and chomping. he has no thought behind his eyes. not one. fuecoco best boy!!!\"",
+              "privacy": "public",
+              "attribute": "characterDetails",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "img",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"https://www.serebii.net/Shiny/SV/new/909.png\"",
+              "privacy": "public",
+              "attribute": "img",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "subtitle",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"#fuecocoslay\"",
+              "privacy": "public",
+              "attribute": "subtitle",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "topText",
+              "privacy": "public",
+              "attribute": "topText",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "bottomText",
+              "privacy": "public",
+              "attribute": "bottomText",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "opened",
+              "privacy": "public",
+              "attribute": "opened",
+              "reflects": true
+            }
+          ],
+          "events": [
+            {
+              "name": "opened-changed",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "characterName",
+              "fieldName": "characterName"
+            },
+            {
+              "name": "characterDetails",
+              "fieldName": "characterDetails"
+            },
+            {
+              "name": "topText",
+              "fieldName": "topText"
+            },
+            {
+              "name": "bottomText",
+              "fieldName": "bottomText"
+            },
+            {
+              "name": "subtitle",
+              "fieldName": "subtitle"
+            },
+            {
+              "name": "img",
+              "fieldName": "img"
+            },
+            {
+              "name": "opened",
+              "fieldName": "opened"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "character-card2",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CharacterCard2",
+          "declaration": {
+            "name": "CharacterCard2",
+            "module": "src/character-card2.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "character-card2",
+          "declaration": {
+            "name": "CharacterCard2",
+            "module": "src/character-card2.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/team-roster.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TeamRoster",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true
+            },
+            {
+              "kind": "method",
+              "name": "updateRoster"
+            },
+            {
+              "kind": "field",
+              "name": "players",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "privacy": "public",
+              "attribute": "players"
+            },
+            {
+              "kind": "field",
+              "name": "team",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Natalies Pokemon Team\"",
+              "privacy": "public",
+              "attribute": "team"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "players",
+              "fieldName": "players"
+            },
+            {
+              "name": "team",
+              "fieldName": "team"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TeamRoster",
+          "declaration": {
+            "name": "TeamRoster",
+            "module": "src/team-roster.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "TeamRoster",
+            "module": "src/team-roster.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "stories/character-card2.stories.js",
       "declarations": [
         {
           "kind": "variable",
@@ -61,7 +267,7 @@
           "kind": "js",
           "name": "default",
           "declaration": {
-            "module": "stories/scaffold-app.stories.js"
+            "module": "stories/character-card2.stories.js"
           }
         },
         {
@@ -69,7 +275,7 @@
           "name": "App",
           "declaration": {
             "name": "App",
-            "module": "stories/scaffold-app.stories.js"
+            "module": "stories/character-card2.stories.js"
           }
         }
       ]
