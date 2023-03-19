@@ -25,6 +25,8 @@
 </head>
 
 <body>
+  <team-roster></team-roster>
+
   <div class="buttons">
     <button class="copy" >Copy</button>
   
@@ -49,6 +51,11 @@
       </div>
     </character-card2>
   </div>
+
+  <script type="module">
+    import "./src/character-card2.js";
+    import "./src/team-roster.js";
+  </script>
 
   <script type="module" src="./src/character-card2.js"></script>
 
@@ -136,3 +143,5 @@ document.querySelector(".changeTitle").addEventListener("click", function(e){
 </body>
 
 </html>
+
+
