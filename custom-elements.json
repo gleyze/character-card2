@@ -213,7 +213,7 @@
               "type": {
                 "text": "string"
               },
-              "default": "\"Natalies Pokemon Team\"",
+              "default": "\"Natalie's Pokemon Team\"",
               "privacy": "public",
               "attribute": "team"
             }

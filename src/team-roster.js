@@ -19,10 +19,11 @@ export class TeamRoster extends LitElement{
         this.players = [];
         this.team = "Natalie's Pokemon Team";
         this.updateRoster();
+        console.log(this.players)
     }
 
     updateRoster(){
-        const address = new URL('../api/roster.js', import.meta.url).href;
+        const address = '../api/roster';
         fetch(address).then((response) => {
             if (response.ok){
                 return response.json()
@@ -54,9 +55,10 @@ export class TeamRoster extends LitElement{
         return html`
         <h2> ${this.team}</h2>
         <div class="wrapper">
-            ${this.players.map(player => html`
+            ${this.players.map(player =>     
+            html`
             <div class="item">
-                <character-card2 name="${player.characterName}" details="${player.characterDetails}" subtitle="${player.subtitle}" img="${player.img}"></character-card2>
+                <character-card2 characterName="${player.characterName}" characterDetails="${player.characterDetails}" subtitle="${player.subtitle}" img="${player.img}"></character-card2>
             </div>
             `)}
         </div>

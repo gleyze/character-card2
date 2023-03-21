@@ -162,3 +162,4 @@ ${this.subtitle}
 }
 
 customElements.define('character-card2', CharacterCard2);
+

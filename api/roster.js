@@ -12,6 +12,12 @@ export default async function handler(request, res){
             "characterDetails": "Yellow Mouse!",
             "img": "https://p.kindpng.com/picc/s/190-1905062_pikachu-laying-down-hd-png-download.png",
             "subtitle": "#mousemoment"
+        },
+        {
+            "characterName": "jigglypuff",
+            "characterDetails": "menace",
+            "img": "https://png.pngitem.com/pimgs/s/135-1357821_jigglypuff-smash-bros-brawl-hd-png-download.png",
+            "subtitle": "#pinkball"
         }
     
     ];
@@ -24,3 +30,5 @@ export default async function handler(request, res){
     res.json(roster);
     
 }
+
+
